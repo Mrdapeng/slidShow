@@ -161,7 +161,7 @@
                 oImgs.appendChild(oimg)
             }
         }
-        slideShow.prototype.slide = function () {
+        slideShow.prototype.slide = function (speed) {
             var aImg = oImgs.getElementsByTagName("img");
             var aLi = oTab.getElementsByTagName("li");
             var oPrev = document.getElementById("prev");
@@ -213,12 +213,13 @@
             function play() {
                 timer = setInterval(function () {
                     oNext.onclick();
-                }, 1000);
+                }, speed);
             }
         }
         /**
          * slideShow
-         * params imgNum speed
+         * @params imgNum 
+         * @params speed
          * 第一个参数控制图片数量，第二个参数控制速度
          * */
         var slide = new slideShow(4, 1200)
